@@ -11,7 +11,8 @@ async def start(event):
     id = event.sender_id
     mention = f"[{event.sender.first_name}](tg://user?id={id})"
     TEXT = "ʜᴇʏ  {}, ɪ ᴀᴍ ᴀ sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ sᴜᴘᴘᴏʀᴛɪɴɢ ʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ sᴛʀɪɴɢ. ᴛʏᴘᴇ /hack ᴛᴏ sᴇᴇ ᴍᴇɴᴜ"
-    await event.reply(TEXT.format(mention))
+    SHUKLA = "https://files.catbox.moe/ihj4vm.jpg"
+    await event.reply_photo(TEXT.format(mention))
     if DB:
         await DB.add_user(id)
     if env.LOG_GROUP_ID:
