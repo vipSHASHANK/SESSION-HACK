@@ -11,10 +11,24 @@ async def start(event):
         id = event.sender_id
         mention = f"[{event.sender.first_name}](tg://user?id={id})"
         TEXT = (
-            ""╭────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼ ⏤͟͟͞͞★\n┆● ʜᴇʏ {}, \n┆● ɪ ᴀᴍ : **{}**\n┆● ᴡɪᴛʜ ᴘᴏᴡᴇʀғᴜʟ ғᴇᴀᴛᴜʀᴇs\n┊● ɪ ᴀᴍ ᴀ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴄᴏɴᴛʀᴏʟ ʙᴏᴛ\n╰─────────────────────────\n──────────────────────────\n❖ ɪ ᴀᴍ ᴀ sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ sᴜᴘᴘᴏʀᴛɪɴɢ\nʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ\nsᴛʀɪɴɢ ᴛʏᴘᴇ /hack ᴛᴏ sᴇᴇ ᴍᴇɴᴜ\n──────────────────────────\n❖ ᴜꜱᴇ » /hack ᴛᴏ ᴄʜᴇᴄᴋ ғᴇᴀᴛᴜʀᴇs\n──────────────────────────\n❖ ᴜᴘᴅᴀᴛᴇ ⏤͟͟͞͞  [❖ ∣ ᴛʜᴇ sᴛʀᴀɴɢᴇʀ ∣ ❖](https://t.me/strangerassociation) \n──────────────────────────"
+            "╭────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼ ⏤͟͟͞͞★\n"
+            "┆● ʜᴇʏ {},\n"
+            "┆● ɪ ᴀᴍ : **{}**\n"
+            "┆● ᴡɪᴛʜ ᴘᴏᴡᴇʀғᴜʟ ғᴇᴀᴛᴜʀᴇs\n"
+            "┊● ɪ ᴀᴍ ᴀ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴄᴏɴᴛʀᴏʟ ʙᴏᴛ\n"
+            "╰─────────────────────────\n"
+            "──────────────────────────\n"
+            "❖ ɪ ᴀᴍ ᴀ sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ sᴜᴘᴘᴏʀᴛɪɴɢ\n"
+            "ʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ\n"
+            "sᴛʀɪɴɢ ᴛʏᴘᴇ /hack ᴛᴏ sᴇᴇ ᴍᴇɴᴜ\n"
+            "──────────────────────────\n"
+            "❖ ᴜꜱᴇ » /hack ᴛᴏ ᴄʜᴇᴄᴋ ғᴇᴀᴛᴜʀᴇs\n"
+            "──────────────────────────\n"
+            "❖ ᴜᴘᴅᴀᴛᴇ ⏤͟͟͞͞  [❖ ∣ ᴛʜᴇ sᴛʀᴀɴɢᴇʀ ∣ ❖](https://t.me/strangerassociation)\n"
+            "──────────────────────────"
         )
         SHUKLA = "https://files.catbox.moe/ihj4vm.jpg"
-        
+
         # Define inline buttons
         BUTTON = [
             [Button.url("▪️sᴇssɪᴏɴ ɢᴇɴ ʙᴏᴛ▪️", "https://t.me/StringSesssionGeneratorRobot")],
@@ -23,22 +37,21 @@ async def start(event):
                 Button.url("▪️sᴜᴘᴘᴏʀᴛ▪️", "https://t.me/SHIVANSHDEVS"),
                 Button.url("▪️ᴜᴘᴅᴀᴛᴇ▪️", "https://t.me/strangerassociation"),
             ],
-            [Button.url("▪️sʜɪᴠᴀɴsʜ-xᴅ▪️",
-                        "https://t.me/ITSZ_SHIVANSH")],
+            [Button.url("▪️sʜɪᴠᴀɴsʜ-xᴅ▪️", "https://t.me/ITSZ_SHIVANSH")],
         ]
-        
+
         # Send photo with caption and buttons
         await bot.send_file(
             event.chat_id,
             file=SHUKLA,
-            caption=TEXT.format(mention),
+            caption=TEXT.format(mention, "sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ"),
             buttons=BUTTON
         )
-        
+
         # Add user to the database if DB is configured
         if DB:
             await DB.add_user(id)
-        
+
         # Log the user in the LOG_GROUP_ID if it is configured
         if env.LOG_GROUP_ID:
             await bot.send_message(
