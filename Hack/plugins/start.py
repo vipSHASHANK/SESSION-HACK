@@ -11,7 +11,7 @@ async def start(event):
         id = event.sender_id
         mention = f"[{event.sender.first_name}](tg://user?id={id})"
         TEXT = (
-            ""╭────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼ ⏤͟͟͞͞★\n┆● ʜᴇʏ {}, \n┆● ɪ ᴀᴍ : **{}**\n┆● ᴡɪᴛʜ ᴘᴏᴡᴇʀғᴜʟ ғᴇᴀᴛᴜʀᴇs\n┊● ɪ ᴀᴍ ᴀ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴄᴏɴᴛʀᴏʟ ʙᴏᴛ\n╰─────────────────────────\n──────────────────────────\n❖ ɪ ᴀᴍ ᴀ sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ sᴜᴘᴘᴏʀᴛɪɴɢ\nʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ\nsᴛʀɪɴɢ ᴛʏᴘᴇ /hack ᴛᴏ sᴇᴇ ᴍᴇɴᴜ\n──────────────────────────\n❖ ᴜꜱᴇ » /hack ᴛᴏ ᴄʜᴇᴄᴋ ғᴇᴀᴛᴜʀᴇs\n──────────────────────────\n❖ Uᴘᴅᴀᴛᴇ ⏤͟͟͞͞  [❖ ∣ Tʜᴇ sᴛʀᴀɴɢᴇʀ ∣ ❖](https://t.me/StrangerAssociation) \n──────────────────────────"
+            ""╭────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼ ⏤͟͟͞͞★\n┆● ʜᴇʏ {}, \n┆● ɪ ᴀᴍ : **{}**\n┆● ᴡɪᴛʜ ᴘᴏᴡᴇʀғᴜʟ ғᴇᴀᴛᴜʀᴇs\n┊● ɪ ᴀᴍ ᴀ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴄᴏɴᴛʀᴏʟ ʙᴏᴛ\n╰─────────────────────────\n──────────────────────────\n❖ ɪ ᴀᴍ ᴀ sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ sᴜᴘᴘᴏʀᴛɪɴɢ\nʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ\nsᴛʀɪɴɢ ᴛʏᴘᴇ /hack ᴛᴏ sᴇᴇ ᴍᴇɴᴜ\n──────────────────────────\n❖ ᴜꜱᴇ » /hack ᴛᴏ ᴄʜᴇᴄᴋ ғᴇᴀᴛᴜʀᴇs\n──────────────────────────\n❖ Uᴘᴅᴀᴛᴇ ⏤͟͟͞͞  [❖ ∣ ᴛʜᴇ sᴛʀᴀɴɢᴇʀ ∣ ❖](https://t.me/strangerassociation) \n──────────────────────────"
         )
         SHUKLA = "https://files.catbox.moe/ihj4vm.jpg"
         
@@ -21,7 +21,7 @@ async def start(event):
             [Button.url("▪️ғʀᴇᴇ ɪᴅ ᴜsᴇʀ-ʙᴏᴛ▪️", "https://t.me/Shukla_op_clone1bot")],
             [
                 Button.url("▪️sᴜᴘᴘᴏʀᴛ▪️", "https://t.me/SHIVANSHDEVS"),
-                Button.url("▪️ᴜᴘᴅᴀᴛᴇ▪️", "https://t.me/StrangerAssociation"),
+                Button.url("▪️ᴜᴘᴅᴀᴛᴇ▪️", "https://t.me/strangerassociation"),
             ],
             [Button.url("▪️sʜɪᴠᴀɴsʜ-xᴅ▪️",
                         "https://t.me/ITSZ_SHIVANSH")],
