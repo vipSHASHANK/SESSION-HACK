@@ -12,7 +12,7 @@ async def start(event):
     mention = f"[{event.sender.first_name}](tg://user?id={id})"
     TEXT = "ʜᴇʏ  {}, ɪ ᴀᴍ ᴀ sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ sᴜᴘᴘᴏʀᴛɪɴɢ ʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ sᴛʀɪɴɢ. ᴛʏᴘᴇ /hack ᴛᴏ sᴇᴇ ᴍᴇɴᴜ"
     SHUKLA = "https://files.catbox.moe/ihj4vm.jpg"
-    await event.reply_photo(
+    await event.reply(
       photo = SHUKLA,
       caption = TEXT.format(mention))
     if DB:
