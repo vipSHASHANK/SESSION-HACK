@@ -18,13 +18,13 @@ async def start(event):
         
         # Define inline buttons
         BUTTON = [
-            [Button.url("🍁 sᴇssɪᴏɴ ɢᴇɴ ʙᴏᴛ 🍁", "https://t.me/StringSesssionGeneratorRobot")],
-            [Button.url("🌿 ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ 🌿", "https://t.me/StrangerAssociation/539")],
+            [Button.url("▪️sᴇssɪᴏɴ ɢᴇɴ ʙᴏᴛ▪️", "https://t.me/StringSesssionGeneratorRobot")],
+            [Button.url("▪️ғʀᴇᴇ ɪᴅ ᴜsᴇʀ-ʙᴏᴛ▪️", "https://t.me/Shukla_op_clone1bot")],
             [
-                Button.url("⌯ ˹sʜɪᴠᴀɴsʜ ʜᴇʀᴇ˼ 🇮🇳", "https://t.me/SHIVANSHDEVS"),
-                Button.url("ᴜᴘᴅᴀᴛᴇ ❄️️️", "https://t.me/StrangerAssociation"),
+                Button.url("▪️sᴜᴘᴘᴏʀᴛ▪️", "https://t.me/SHIVANSHDEVS"),
+                Button.url("▪️ᴜᴘᴅᴀᴛᴇ▪️", "https://t.me/StrangerAssociation"),
             ],
-            [Button.url("𝆺𝅥⃝ᶦϻ‌ ˢʰⁱᵛ ≛⃝🇸𝐇𝐈𝐕𝐀𝐍⃝⃝⃪⃕𝐒𝐇❣𓆩ꭙ𝗗𓆪ꪾ🥀⃝⃪•๋๋๋๋๋๋๋๋๋๋๋๋๋•๋๋๋๋๋๋๋≛",
+            [Button.url("▪️sʜɪᴠᴀɴsʜ-xᴅ▪️",
                         "https://t.me/ITSZ_SHIVANSH")],
         ]
         
