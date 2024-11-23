@@ -25,7 +25,7 @@ async def start(event):
             "**❖ ᴜꜱᴇ » /hack ᴛᴏ ᴄʜᴇᴄᴋ ғᴇᴀᴛᴜʀᴇs**\n"
             "**──────────────────────────**"
         )
-        SHUKLA = "https://files.catbox.moe/ihj4vm.jpg"
+        SHUKLA = "https://files.catbox.moe/59sb66.jpg"
 
         # Define inline buttons
         BUTTON = [
