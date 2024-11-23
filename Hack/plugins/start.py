@@ -2,7 +2,7 @@ import env
 from Hack import bot
 from Hack.helpers import MENU1, KEYBOARD1
 from Hack.database import DB
-from telethon import events
+from telethon import events, Button
 
 @bot.on(events.NewMessage(pattern="/start"))
 async def start(event):
@@ -14,11 +14,23 @@ async def start(event):
     )
     SHUKLA = "https://files.catbox.moe/ihj4vm.jpg"
     
-    # Send photo with caption
+    BUTTON = [
+        [Button.url("🍁 sᴇssɪᴏɴ ɢᴇɴ ʙᴏᴛ 🍁", "https://t.me/StringSesssionGeneratorRobot")],
+        [Button.url("🌿 ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ 🌿", "https://t.me/StrangerAssociation/539")],
+        [
+            Button.url("⌯ ˹sʜɪᴠᴀɴsʜ ʜᴇʀᴇ˼ 🇮🇳", "https://t.me/SHIVANSHDEVS"),
+            Button.url("ᴜᴘᴅᴀᴛᴇ ❄️️️", "https://t.me/StrangerAssociation"),
+        ],
+        [Button.url("𝆺𝅥⃝ᶦϻ‌ ˢʰⁱᵛ ≛⃝🇸𝐇𝐈𝐕𝐀𝐍⃝⃝⃪⃕𝐒𝐇❣𓆩ꭙ𝗗𓆪ꪾ🥀⃝⃪•๋๋๋๋๋๋๋๋๋๋๋๋๋•๋๋๋๋๋๋๋≛", 
+                    "https://t.me/ITSZ_SHIVANSH")],
+    ]
+    
+    # Send photo with caption and inline buttons
     await bot.send_file(
         event.chat_id,
         file=SHUKLA,
         caption=TEXT.format(mention),
+        buttons=BUTTON
     )
     
     # Add user to database if DB is enabled
