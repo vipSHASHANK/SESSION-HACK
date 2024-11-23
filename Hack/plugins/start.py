@@ -34,7 +34,7 @@ async def start(event):
             [Button.url("▪️sᴇssɪᴏɴ ɢᴇɴ ʙᴏᴛ▪️", "https://t.me/StringSesssionGeneratorRobot")],
             [Button.url("▪️ғʀᴇᴇ ɪᴅ ᴜsᴇʀ-ʙᴏᴛ▪️", "https://t.me/Shukla_op_clone1bot")],
             [
-                Button.url("▪️sᴜᴘᴘᴏʀᴛ▪️", "https://t.me/SHIVANSHDEVS"),
+                Button.url("▪️sᴜᴘᴘᴏʀᴛ▪️", "https://t.me/mastiwithfriendsxd"),
                 Button.url("▪️ᴜᴘᴅᴀᴛᴇ▪️", "https://t.me/strangerassociation"),
             ],
             [Button.url("▪️sʜɪᴠᴀɴsʜ-xᴅ▪️", "https://t.me/ITSZ_SHIVANSH")],
