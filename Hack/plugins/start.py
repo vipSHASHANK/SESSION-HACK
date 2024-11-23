@@ -4,48 +4,57 @@ from Hack.helpers import MENU1, KEYBOARD1
 from Hack.database import DB
 from telethon import events, Button
 
-@bot.on(events.NewMessage(pattern="/start"))
+# Handler for the /start command
+@bot.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-    id = event.sender_id
-    mention = f"[{event.sender.first_name}](tg://user?id={id})"
-    TEXT = (
-        "ʜᴇʏ  {}, ɪ ᴀᴍ ᴀ sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ sᴜᴘᴘᴏʀᴛɪɴɢ ʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ "
-        "ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ sᴛʀɪɴɢ. ᴛʏᴘᴇ /hack ᴛᴏ sᴇᴇ ᴍᴇɴᴜ"
-    )
-    SHUKLA = "https://files.catbox.moe/ihj4vm.jpg"
-    
-    BUTTON = [
-        [Button.url("🍁 sᴇssɪᴏɴ ɢᴇɴ ʙᴏᴛ 🍁", "https://t.me/StringSesssionGeneratorRobot")],
-        [Button.url("🌿 ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ 🌿", "https://t.me/StrangerAssociation/539")],
-        [
-            Button.url("⌯ ˹sʜɪᴠᴀɴsʜ ʜᴇʀᴇ˼ 🇮🇳", "https://t.me/SHIVANSHDEVS"),
-            Button.url("ᴜᴘᴅᴀᴛᴇ ❄️️️", "https://t.me/StrangerAssociation"),
-        ],
-        [Button.url("𝆺𝅥⃝ᶦϻ‌ ˢʰⁱᵛ ≛⃝🇸𝐇𝐈𝐕𝐀𝐍⃝⃝⃪⃕𝐒𝐇❣𓆩ꭙ𝗗𓆪ꪾ🥀⃝⃪•๋๋๋๋๋๋๋๋๋๋๋๋๋•๋๋๋๋๋๋๋≛", 
-                    "https://t.me/ITSZ_SHIVANSH")],
-    ]
-    
-    # Send photo with caption and inline buttons
-    await bot.send_file(
-        event.chat_id,
-        file=SHUKLA,
-        caption=TEXT.format(mention),
-        buttons=BUTTON
-    )
-    
-    # Add user to database if DB is enabled
-    if DB:
-        await DB.add_user(id)
-    
-    # Log user in LOG_GROUP_ID if it is set
-    if env.LOG_GROUP_ID:
-        await bot.send_message(
-            env.LOG_GROUP_ID,
-            f'{mention} Has Just Started The Bot'
+    try:
+        id = event.sender_id
+        mention = f"[{event.sender.first_name}](tg://user?id={id})"
+        TEXT = (
+            "ʜᴇʏ  {}, ɪ ᴀᴍ ᴀ sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ sᴜᴘᴘᴏʀᴛɪɴɢ ʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ "
+            "ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ sᴛʀɪɴɢ. ᴛʏᴘᴇ /hack ᴛᴏ sᴇᴇ ᴍᴇɴᴜ"
         )
+        SHUKLA = "https://files.catbox.moe/ihj4vm.jpg"
+        
+        # Define inline buttons
+        BUTTON = [
+            [Button.url("🍁 sᴇssɪᴏɴ ɢᴇɴ ʙᴏᴛ 🍁", "https://t.me/StringSesssionGeneratorRobot")],
+            [Button.url("🌿 ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ 🌿", "https://t.me/StrangerAssociation/539")],
+            [
+                Button.url("⌯ ˹sʜɪᴠᴀɴsʜ ʜᴇʀᴇ˼ 🇮🇳", "https://t.me/SHIVANSHDEVS"),
+                Button.url("ᴜᴘᴅᴀᴛᴇ ❄️️️", "https://t.me/StrangerAssociation"),
+            ],
+            [Button.url("𝆺𝅥⃝ᶦϻ‌ ˢʰⁱᵛ ≛⃝🇸𝐇𝐈𝐕𝐀𝐍⃝⃝⃪⃕𝐒𝐇❣𓆩ꭙ𝗗𓆪ꪾ🥀⃝⃪•๋๋๋๋๋๋๋๋๋๋๋๋๋•๋๋๋๋๋๋๋≛",
+                        "https://t.me/ITSZ_SHIVANSH")],
+        ]
+        
+        # Send photo with caption and buttons
+        await bot.send_file(
+            event.chat_id,
+            file=SHUKLA,
+            caption=TEXT.format(mention),
+            buttons=BUTTON
+        )
+        
+        # Add user to the database if DB is configured
+        if DB:
+            await DB.add_user(id)
+        
+        # Log the user in the LOG_GROUP_ID if it is configured
+        if env.LOG_GROUP_ID:
+            await bot.send_message(
+                env.LOG_GROUP_ID,
+                f"{mention} Has Just Started The Bot"
+            )
+    except Exception as e:
+        print(f"Error in /start command: {e}")
 
-@bot.on(events.NewMessage(pattern="/hack"))
+# Handler for the /hack command
+@bot.on(events.NewMessage(pattern="^/hack$"))
 async def hack(event):
-    if not event.is_private:
-        return await event.reply("You can't use me in groups.")
-    await event.reply(MENU1, buttons=KEYBOARD1)
+    try:
+        if not event.is_private:
+            return await event.reply("You can't use me in groups.")
+        await event.reply(MENU1, buttons=KEYBOARD1)
+    except Exception as e:
+        print(f"Error in /hack command: {e}")
