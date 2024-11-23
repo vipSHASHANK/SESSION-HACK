@@ -2,25 +2,35 @@ import env
 from Hack import bot
 from Hack.helpers import MENU1, KEYBOARD1
 from Hack.database import DB
-
 from telethon import events
-
 
 @bot.on(events.NewMessage(pattern="/start"))
 async def start(event):
     id = event.sender_id
     mention = f"[{event.sender.first_name}](tg://user?id={id})"
-    TEXT = "ʜᴇʏ  {}, ɪ ᴀᴍ ᴀ sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ sᴜᴘᴘᴏʀᴛɪɴɢ ʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ sᴛʀɪɴɢ. ᴛʏᴘᴇ /hack ᴛᴏ sᴇᴇ ᴍᴇɴᴜ"
+    TEXT = (
+        "ʜᴇʏ  {}, ɪ ᴀᴍ ᴀ sᴇssɪᴏɴ ʜᴀᴄᴋᴇʀ ʙᴏᴛ sᴜᴘᴘᴏʀᴛɪɴɢ ʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ "
+        "ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ sᴛʀɪɴɢ. ᴛʏᴘᴇ /hack ᴛᴏ sᴇᴇ ᴍᴇɴᴜ"
+    )
     SHUKLA = "https://files.catbox.moe/ihj4vm.jpg"
-    await event.reply(
-      photo = SHUKLA,
-      caption = TEXT.format(mention))
+    
+    # Send photo with caption
+    await bot.send_file(
+        event.chat_id,
+        file=SHUKLA,
+        caption=TEXT.format(mention),
+    )
+    
+    # Add user to database if DB is enabled
     if DB:
         await DB.add_user(id)
+    
+    # Log user in LOG_GROUP_ID if it is set
     if env.LOG_GROUP_ID:
-        await bot.send_message(env.LOG_GROUP_ID,
-                               f'{mention} Has Just Started The Bot')
-
+        await bot.send_message(
+            env.LOG_GROUP_ID,
+            f'{mention} Has Just Started The Bot'
+        )
 
 @bot.on(events.NewMessage(pattern="/hack"))
 async def hack(event):
